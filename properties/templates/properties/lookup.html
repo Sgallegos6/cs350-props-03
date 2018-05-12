@@ -1,0 +1,19 @@
+<!-- lookup.html -->
+{% extends "core/base.html" %}
+{% block page_header %}Search Properties{% endblock page_header %}
+{% block content %}
+
+<div class="row">
+    <div class="col">
+        <form action="." method="get"> 
+            {{ form.as_p }}
+            <input type="submit" value="Search for Properties"/>
+        </form>
+    </div>
+    <div class="col">
+        {% for i in searches %}
+            <p>{{ i.address }} - {{ i.prop_type }}</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock content %}
